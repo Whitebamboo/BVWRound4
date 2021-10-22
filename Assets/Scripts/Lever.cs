@@ -6,6 +6,7 @@ public class Lever : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject Water;
+    //public GameObject WaterCollider;
     void Start()
     {
         
@@ -20,11 +21,13 @@ public class Lever : MonoBehaviour
     {
         if (other.gameObject.name == "OnTrigger")
         {
+            //WaterCollider.SetActive(true);
             Water.GetComponent<PourDetector>().pourCheck=true;
         }
 
         if (other.gameObject.name == "OffTrigger")
         {
+            //WaterCollider.SetActive(false);
             Water.GetComponent<PourDetector>().pourCheck = false;
         }
     }

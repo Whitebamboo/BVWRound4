@@ -62,7 +62,13 @@ public class Stream : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
-        Physics.Raycast(ray, out hit, 2f);
+        Physics.Raycast(ray, out hit, 2f,3);
+        Debug.Log(hit.collider.gameObject.name);
+        if (hit.collider.gameObject.name == "Bowl" && hit.collider.gameObject.GetComponent<Bowl>().hasWater == false)
+        {
+            hit.collider.gameObject.GetComponent<Bowl>().hasWater = true;
+            hit.collider.gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
+        }
         Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(2.0f);
         return endPoint;
     }
