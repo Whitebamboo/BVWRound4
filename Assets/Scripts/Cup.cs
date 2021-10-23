@@ -6,6 +6,7 @@ public class Cup : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool hasRice;
+    public GameObject Rice;
     void Start()
     {
         hasRice = false;
@@ -19,18 +20,18 @@ public class Cup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Rice")
+        if (other.gameObject.name == "RiceBag")
         {
             hasRice = true;
-            GetComponent<MeshRenderer>().material.color = Color.white;
+            Rice.SetActive(true);
         }
 
-        if (other.gameObject.name == "Bowl"&&hasRice)
+        if (other.gameObject.name == "CookerInnerPot" && hasRice)
         {
             hasRice = false;
             other.gameObject.GetComponent<Bowl>().hasRice = true;
-            GetComponent<MeshRenderer>().material.color = Color.black;
-            other.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
+            Rice.SetActive(false);
+            other.gameObject.GetComponent<Bowl>().ActivePlaneRice();
         }
     }
 }

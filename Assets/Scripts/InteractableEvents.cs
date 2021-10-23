@@ -15,7 +15,7 @@ public class InteractableEvents : MonoBehaviour
     {
         renderer.material.color = Color.red;
     }
-
+    
     public void InteractorImpluse()
     {
         if (interactable == null) return;
