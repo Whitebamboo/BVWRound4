@@ -29,6 +29,11 @@ public class Cup : MonoBehaviour
 
         if (other.gameObject.name == "CookerInnerPot" && hasRice)
         {
+            
+            if (other.gameObject.GetComponent<Bowl>().hasRice == false)
+            {
+                SoundMgr.Instance.PlayDialogue();
+            }
             SoundMgr.Instance.PlaySound(0);
             hasRice = false;
             other.gameObject.GetComponent<Bowl>().hasRice = true;

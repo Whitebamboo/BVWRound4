@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Image flashimage;
+    
     void Start()
     {
-        StartCoroutine(FadeOut(flashimage, 0.01f, 2f));
+        Debug.Log(SceneManager.GetActiveScene().name);
+        
+        
         
     }
 
@@ -20,10 +22,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void NextScene(string scenename)
-    {
-        StartCoroutine(FadeIn(flashimage, 0.01f, 2f, scenename));
-    }
+    
 
     IEnumerator FadeIn(Image i, float smoothness, float duration, string sceneName)
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundMgr : MonoBehaviour
@@ -36,9 +37,13 @@ public class SoundMgr : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0;
+        //audioSource.volume = 0;
         PlayBGM(1);
-        VolumeFadeIn();
+        //VolumeFadeIn();
+        if (SceneManager.GetActiveScene().name == "CookingScene")
+        {
+            SoundMgr.Instance.PlayDialogue();
+        }
     }
 
     public void PlaySound(int clipIndex)

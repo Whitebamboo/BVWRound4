@@ -66,7 +66,7 @@ public class Stream : MonoBehaviour
         //Debug.Log(hit.collider.gameObject.name);
         if (hit.collider.gameObject.name == "CookerInnerPot" && hit.collider.gameObject.GetComponent<Bowl>().hasWater == false)
         {
-           
+            SoundMgr.Instance.PlayDialogue();
             hit.collider.gameObject.GetComponent<Bowl>().hasWater = true;
             hit.collider.gameObject.GetComponent<Bowl>().ActiveInnerPot1();
         }
