@@ -6,10 +6,14 @@ public class Cup : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool hasRice;
+    public bool ReadyForWater;
     public GameObject Rice;
+    public bool hasWater;
+    public GameObject innerWater;
     void Start()
     {
         hasRice = false;
+        ReadyForWater = false;
     }
 
     // Update is called once per frame
@@ -20,25 +24,27 @@ public class Cup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.name == "RiceBag"&&!hasRice)
         {
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
             hasRice = true;
             Rice.SetActive(true);
             SoundMgr.Instance.PlaySound(0);
         }
 
-        if (other.gameObject.name == "CookerInnerPot" && hasRice)
+        if (other.gameObject.name == "CookerInnerPot" && hasRice &&!ReadyForWater)
         {
             
-            if (other.gameObject.GetComponent<Bowl>().hasRice == false)
-            {
-                SoundMgr.Instance.PlayDialogue();
-            }
+            
             SoundMgr.Instance.PlaySound(0);
             hasRice = false;
+            ReadyForWater = true;
             other.gameObject.GetComponent<Bowl>().hasRice = true;
             Rice.SetActive(false);
             other.gameObject.GetComponent<Bowl>().ActivePlaneRice();
         }
+
+        
     }
 }

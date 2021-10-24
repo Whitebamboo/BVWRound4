@@ -43,7 +43,7 @@ public class SoundMgr : MonoBehaviour
         //VolumeFadeIn();
         if (SceneManager.GetActiveScene().name == "CookingScene")
         {
-            SoundMgr.Instance.PlayDialogue();
+            SoundMgr.Instance.PlayDialogue(1);
         }
     }
 
@@ -53,15 +53,14 @@ public class SoundMgr : MonoBehaviour
        
     }
 
-    public void PlayDialogue()
+    public void PlayDialogue(int times)
     {
         if (dialogueIndex == dialoguesList.Count)
         {
             Debug.LogWarning("dialogue index exceeds range!");
             return;
         }
-        audioSource.PlayOneShot(dialoguesList[dialogueIndex]);
-        dialogueIndex++;
+        StartCoroutine(PlayDialogIE(times));
     }
 
     public void PlayBGM(int clipIndex)
@@ -87,5 +86,17 @@ public class SoundMgr : MonoBehaviour
             audioSource.volume += inc;
             yield return new WaitForSeconds(smoothness);
         }
+    }
+
+    IEnumerator PlayDialogIE(int times)
+    {
+        for(int i = 0; i < times; i++)
+        {
+            audioSource.PlayOneShot(dialoguesList[dialogueIndex]);
+            yield return new WaitForSeconds(dialoguesList[dialogueIndex].length);
+            dialogueIndex++;
+            
+        }
+        
     }
 }

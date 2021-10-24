@@ -6,17 +6,18 @@ public class Bowl : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool hasRice;
-    public bool hasWater;
+    public bool readyforCook;
+    private int waterCount =1;
     public GameObject PlaneRice;
     public GameObject InnerPot1;
+    public GameObject InnerPot2;
     public GameObject InnerPotinSteamCooker;
-    public Material material;
-    public float progress = 0;
+
     void Start()
     {
-        material = InnerPot1.GetComponent<MeshRenderer>().material;
+        
         hasRice = false;
-        hasWater = false;
+        readyforCook = false;
     }
 
     // Update is called once per frame
@@ -29,13 +30,20 @@ public class Bowl : MonoBehaviour
     {
         
 
-        if (other.gameObject.name == "SteamCooker" && hasWater)
+        if (other.gameObject.name == "SteamCooker" && readyforCook)
         {
             SoundMgr.Instance.PlaySound(1);
             InnerPotinSteamCooker.SetActive(true);
             Destroy(gameObject);
             
         }
+        if (other.gameObject.name == "MeasuringCup" && other.gameObject.GetComponent<Cup>().hasWater)
+        {
+            other.gameObject.GetComponent<Cup>().hasWater = false;
+            other.gameObject.GetComponent<Cup>().innerWater.SetActive(false);
+            AddWater();
+        }
+        
     }
     public void ActivePlaneRice()
     {
@@ -45,6 +53,22 @@ public class Bowl : MonoBehaviour
     public void ActiveInnerPot1()
     {
         InnerPot1.SetActive(true);
+    }
+
+    public void AddWater()
+    {
+        if (waterCount == 1)
+        {
+            InnerPot1.SetActive(true);
+            waterCount++;
+        }
+        else if (waterCount == 2)
+        {
+            InnerPot1.SetActive(false);
+            InnerPot2.SetActive(true);
+            waterCount++;
+            readyforCook = true;
+        }
     }
 
     

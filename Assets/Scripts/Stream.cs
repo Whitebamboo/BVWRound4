@@ -64,11 +64,11 @@ public class Stream : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
         Physics.Raycast(ray, out hit, 2f,3);
         //Debug.Log(hit.collider.gameObject.name);
-        if (hit.collider.gameObject.name == "CookerInnerPot" && hit.collider.gameObject.GetComponent<Bowl>().hasWater == false)
+        if (hit.collider.gameObject.name == "MeasuringCup" && hit.collider.gameObject.GetComponent<Cup>().ReadyForWater && !hit.collider.gameObject.GetComponent<Cup>().hasWater)
         {
-            SoundMgr.Instance.PlayDialogue();
-            hit.collider.gameObject.GetComponent<Bowl>().hasWater = true;
-            hit.collider.gameObject.GetComponent<Bowl>().ActiveInnerPot1();
+            //SoundMgr.Instance.PlayDialogue(1);
+            hit.collider.gameObject.GetComponent<Cup>().hasWater = true;
+            hit.collider.gameObject.GetComponent<Cup>().innerWater.SetActive(true);
         }
         Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(2.0f);
         return endPoint;
