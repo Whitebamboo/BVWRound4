@@ -27,11 +27,15 @@ public class Lever : MonoBehaviour
         isOpen = !isOpen;
         if (isOpen)
         {
+            GetComponent<AudioSource>().Play();
+            SoundMgr.Instance.PlaySound(5);
             Water.GetComponent<PourDetector>().pourCheck = true;
             handlerAnimator.SetBool("open",true);
         }
         else if (!isOpen)
         {
+            GetComponent<AudioSource>().Stop();
+            SoundMgr.Instance.PlaySound(6);
             Water.GetComponent<PourDetector>().pourCheck = false;
             handlerAnimator.SetBool("open", false);
         }

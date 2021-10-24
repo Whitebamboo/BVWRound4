@@ -20,14 +20,16 @@ public class Cup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "RiceBag")
+        if (other.gameObject.name == "RiceBag"&&!hasRice)
         {
             hasRice = true;
             Rice.SetActive(true);
+            SoundMgr.Instance.PlaySound(0);
         }
 
         if (other.gameObject.name == "CookerInnerPot" && hasRice)
         {
+            SoundMgr.Instance.PlaySound(0);
             hasRice = false;
             other.gameObject.GetComponent<Bowl>().hasRice = true;
             Rice.SetActive(false);

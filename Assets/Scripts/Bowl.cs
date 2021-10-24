@@ -31,6 +31,7 @@ public class Bowl : MonoBehaviour
 
         if (other.gameObject.name == "SteamCooker" && hasWater)
         {
+            SoundMgr.Instance.PlaySound(1);
             InnerPotinSteamCooker.SetActive(true);
             Destroy(gameObject);
             

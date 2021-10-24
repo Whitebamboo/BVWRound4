@@ -6,9 +6,10 @@ using UnityEngine;
 public class SoundMgr : MonoBehaviour
 {
     [Header("Audio List")]
+    [SerializeField] private List<AudioClip> soundList;
     [SerializeField] private List<AudioClip> bgmList;
     [SerializeField] private List<AudioClip> dialoguesList;
-    [SerializeField] private static SoundMgr Instance = null;
+    [SerializeField] public static SoundMgr Instance = null;
     [SerializeField] private int dialogueIndex = 0;
 
     [Header("FadeIn Configs")]
@@ -36,13 +37,14 @@ public class SoundMgr : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = 0;
-        PlayBGM(0);
+        PlayBGM(1);
         VolumeFadeIn();
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(int clipIndex)
     {
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(soundList[clipIndex]);
+       
     }
 
     public void PlayDialogue()

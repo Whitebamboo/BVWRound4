@@ -22,6 +22,7 @@ public class CaCookerp : MonoBehaviour
     {
         if(other.gameObject.name=="SteamCooker"&& CookerInnerPot.activeSelf)
         {
+            SoundMgr.Instance.PlaySound(1);
             cacookerp.SetActive(true);
             Destroy(gameObject);
         }
