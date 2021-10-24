@@ -32,6 +32,7 @@ public class SoundMgr : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
+        
     }
 
     void Start()

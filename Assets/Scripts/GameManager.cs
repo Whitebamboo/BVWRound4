@@ -7,10 +7,24 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+    public static GameManager Instance = null;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+
+    }
     void Start()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
+       
         
         
         
@@ -23,35 +37,18 @@ public class GameManager : MonoBehaviour
     }
 
     
-
-    IEnumerator FadeIn(Image i, float smoothness, float duration, string sceneName)
+    public void ChangeScene(string scenename)
     {
-        float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
-        float increment = smoothness / duration; //The amount of change to apply.
-
-        while (progress < 1)
-        {
-            i.color = Color.Lerp(new Color(i.color.r, i.color.g, i.color.b, 0), new Color(i.color.r, i.color.g, i.color.b, 1), progress);
-            progress += increment;
-            yield return new WaitForSeconds(smoothness);
-
-        }
-        SceneManager.LoadScene(sceneName);
-
+        StartCoroutine(WaitForChangeScene(scenename));
+        
     }
 
-    IEnumerator FadeOut(Image i, float smoothness, float duration)
+    IEnumerator WaitForChangeScene(string scenename)
     {
-        float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
-        float increment = smoothness / duration; //The amount of change to apply.
-
-        while (progress < 1)
-        {
-            i.color = Color.Lerp(new Color(i.color.r, i.color.g, i.color.b, 1), new Color(i.color.r, i.color.g, i.color.b, 0), progress);
-            progress += increment;
-            yield return new WaitForSeconds(smoothness);
-
-        }
+        URPScreenFade.Instance.SceneFadeOut();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(scenename);
     }
+    
 
 }

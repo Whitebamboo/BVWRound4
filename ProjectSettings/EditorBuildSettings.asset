@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
-    path: Assets/Scenes/0_VR_SetUp.unity
-    guid: 59c60a6d03739d842b5863f23a3a682c
+    path: Assets/Scenes/CookingScene.unity
+    guid: b031b547f3e995a4cbce8eb12309cdc8
+  - enabled: 1
+    path: Assets/Scenes/VideoChatScene.unity
+    guid: 7e7cee39dc0821d449116f1fd6b6fcfb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 21260048bbc1d3f41840bfd81c8d7842, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c302db31389f23b4bb9520117cdf3371, type: 2}
