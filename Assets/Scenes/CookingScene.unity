@@ -3563,12 +3563,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6ba3aac67b97da34badf8b31333f3073, type: 3}
   - {fileID: 8300000, guid: 2199f6ba73e81384196dc261032df992, type: 3}
   dialoguesList:
-  - {fileID: 8300000, guid: 99d601570dcc69d4da53f76dace68c9e, type: 3}
-  - {fileID: 8300000, guid: b4f7fce9bf4c8f549bc309ddf01b66f2, type: 3}
-  - {fileID: 8300000, guid: 4a11b95fa62b7814da605f05bd35d294, type: 3}
-  - {fileID: 8300000, guid: 4a11b95fa62b7814da605f05bd35d294, type: 3}
-  - {fileID: 8300000, guid: 4a11b95fa62b7814da605f05bd35d294, type: 3}
-  - {fileID: 8300000, guid: 4a11b95fa62b7814da605f05bd35d294, type: 3}
+  - {fileID: 8300000, guid: 7c25c0b75e006384ebae30b80c9acfed, type: 3}
+  - {fileID: 8300000, guid: b30c5bb12b4c1cd4b9c6c040c88fde63, type: 3}
+  - {fileID: 8300000, guid: db5b4916f21e6cd4db0a384cf2b001b7, type: 3}
+  - {fileID: 8300000, guid: 34340c6c3ff9b0245a01ab42bd7cfe54, type: 3}
+  - {fileID: 8300000, guid: 531285d97a920264c912e410c5b8b060, type: 3}
+  - {fileID: 8300000, guid: e8c32debb784a2844bbc11b76cfb08fe, type: 3}
+  - {fileID: 8300000, guid: 5362d80e2f391c84e96a1f20900c9bdf, type: 3}
   dialogueIndex: 0
   smoothness: 0.5
   increase: 0.05

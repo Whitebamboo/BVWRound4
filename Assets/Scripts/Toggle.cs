@@ -32,7 +32,7 @@ public class Toggle : MonoBehaviour
 
     IEnumerator Dialog4()
     {
-        float waittime = SoundMgr.Instance.PlayDialogue(1);
+        float waittime = SoundMgr.Instance.PlayDialogue(2);
         yield return new WaitForSeconds(waittime);
         GameManager.Instance.ChangeScene("BeginScene 2");
     }
