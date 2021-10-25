@@ -19,12 +19,15 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(gameObject);
+       
 
     }
     void Start()
     {
-       
+        if (SceneManager.GetActiveScene().name == "CookingScene")
+        {
+            SoundMgr.Instance.PlayBGM(1);
+        }
 
 
 

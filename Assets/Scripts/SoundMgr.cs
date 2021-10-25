@@ -39,7 +39,7 @@ public class SoundMgr : MonoBehaviour
     {
         
         //audioSource.volume = 0;
-        PlayBGM(1);
+        PlayBGM(0);
         //VolumeFadeIn();
         
     }
