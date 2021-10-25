@@ -23,6 +23,7 @@ public class Toggle : MonoBehaviour
     {
         if (Cacookerp.activeSelf&& isStart==false)
         {
+            SoundMgr.Instance.PlaySound(14);
             isStart = true;
             animator.SetTrigger("Trigger");
             StartCoroutine(Dialog4());

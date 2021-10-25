@@ -61,9 +61,11 @@ public class Bowl : MonoBehaviour
         {
             InnerPot1.SetActive(true);
             waterCount++;
+            SoundMgr.Instance.PlaySound(13);
         }
         else if (waterCount == 2)
         {
+            SoundMgr.Instance.PlaySound(13);
             InnerPot1.SetActive(false);
             InnerPot2.SetActive(true);
             waterCount++;
