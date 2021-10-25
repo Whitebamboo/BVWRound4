@@ -31,7 +31,7 @@ public class SoundMgr : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -39,7 +39,15 @@ public class SoundMgr : MonoBehaviour
     {
         
         //audioSource.volume = 0;
-        PlayBGM(0);
+        if(SceneManager.GetActiveScene().name=="BeginScene"||SceneManager.GetActiveScene().name== "BeginScene 2")
+        {
+            PlayBGM(0);
+        }
+        else if(SceneManager.GetActiveScene().name=="CookingScene"|| SceneManager.GetActiveScene().name == "VideoChatScene")
+        {
+            PlayBGM(1);
+        }
+        
         //VolumeFadeIn();
         
     }

@@ -34,6 +34,6 @@ public class Toggle : MonoBehaviour
     {
         float waittime = SoundMgr.Instance.PlayDialogue(1);
         yield return new WaitForSeconds(waittime);
-        GameManager.Instance.ChangeScene("VideoChatScene");
+        GameManager.Instance.ChangeScene("BeginScene 2");
     }
 }

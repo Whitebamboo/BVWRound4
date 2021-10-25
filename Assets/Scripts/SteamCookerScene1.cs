@@ -40,6 +40,14 @@ public class SteamCookerScene1 : MonoBehaviour
             yield return new WaitForSeconds(smoothness);
             
         }
-        GameManager.Instance.ChangeScene("CookingScene");
+        if (this.gameObject.name == "SteamCooker")
+        {
+            GameManager.Instance.ChangeScene("CookingScene");
+        }
+        else if (this.gameObject.name == "iPad")
+        {
+            GameManager.Instance.ChangeScene("VideoChatScene");
+        }
+        
     }
 }
