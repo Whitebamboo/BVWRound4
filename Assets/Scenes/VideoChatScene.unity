@@ -1439,7 +1439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &512866841
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1659,7 +1659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &562429134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2291,7 +2291,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740839870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -5299,7 +5299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c0f195fb51ee6345971c6183786226e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36344522
+      value: 0.3726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c0f195fb51ee6345971c6183786226e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5336,6 +5336,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8c0f195fb51ee6345971c6183786226e, type: 3}
       propertyPath: m_Name
       value: iPhone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c0f195fb51ee6345971c6183786226e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c0f195fb51ee6345971c6183786226e, type: 3}
@@ -5632,6 +5636,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8c0f195fb51ee6345971c6183786226e, type: 3}
   m_PrefabInstance: {fileID: 1787961801}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1874085375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874085373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06971283, y: 0.010167301, z: 0.13758594}
+  m_Center: {x: -0.0008860454, y: 0.013885677, z: 0.00016921015}
 --- !u!114 &1874085376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5770,6 +5787,7 @@ MonoBehaviour:
   isBeingCalled: 0
   haveCalled: 0
   startTime: 0
+  isPressed: 0
   BeingCalledObj: {fileID: 512866840}
 --- !u!1 &1908981970
 GameObject:
@@ -6187,6 +6205,7 @@ MonoBehaviour:
   isBeingCalled: 0
   haveCalled: 0
   startTime: 0
+  isPressed: 0
   BeingCalledObj: {fileID: 0}
 --- !u!114 &1970636951
 MonoBehaviour:

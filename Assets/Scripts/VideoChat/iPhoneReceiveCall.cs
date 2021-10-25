@@ -22,6 +22,8 @@ public class iPhoneReceiveCall : MonoBehaviour
         this.gameObject.SetActive(false);
         VideoChatObj.SetActive(true);
 
+        this.gameObject.GetComponentInParent<iPhone>().isPressed = true;
+
         SoundMgr.Instance.PlaySound(0);
     }
 }

@@ -8,6 +8,7 @@ public class iPhone : MonoBehaviour
     public bool isBeingCalled;
     public bool haveCalled;
     public float startTime;
+    public bool isPressed;
 
     public GameObject BeingCalledObj;
     //public GameObject 
@@ -29,9 +30,11 @@ public class iPhone : MonoBehaviour
             isBeingCalled = false;
             haveCalled = true;
         }
-        if ((Time.time - startTime > 2.5f) && (haveCalled)){
+        if ((Time.time - startTime > 2.5f) && (haveCalled) && (!isPressed)){
             BlackObject.SetActive(false);
             BeingCalledObj.SetActive(true);
+            SoundMgr.Instance.PlaySound(8);
+            SoundMgr.Instance.PlaySound(10);
         }
     }
 
