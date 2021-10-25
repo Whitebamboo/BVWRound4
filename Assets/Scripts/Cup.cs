@@ -14,6 +14,7 @@ public class Cup : MonoBehaviour
     {
         hasRice = false;
         ReadyForWater = false;
+        StartCoroutine(Dialog1());
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class Cup : MonoBehaviour
             
             SoundMgr.Instance.PlaySound(0);
             hasRice = false;
-            ReadyForWater = true;
+            StartCoroutine(Dialog2());
             other.gameObject.GetComponent<Bowl>().hasRice = true;
             Rice.SetActive(false);
             other.gameObject.GetComponent<Bowl>().ActivePlaneRice();
@@ -47,4 +48,18 @@ public class Cup : MonoBehaviour
 
         
     }
+    IEnumerator Dialog1()
+    {
+        float waittime=SoundMgr.Instance.PlayDialogue(2);
+        yield return new WaitForSeconds(waittime);
+        GetComponent<BoxCollider>().enabled = true;
+    }
+
+    IEnumerator Dialog2()
+    {
+        float waittime = SoundMgr.Instance.PlayDialogue(1);
+        yield return new WaitForSeconds(waittime);
+        ReadyForWater = true;
+    }
+    
 }

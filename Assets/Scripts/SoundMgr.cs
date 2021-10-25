@@ -32,19 +32,16 @@ public class SoundMgr : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        
         //audioSource.volume = 0;
         PlayBGM(1);
         //VolumeFadeIn();
-        if (SceneManager.GetActiveScene().name == "CookingScene")
-        {
-            SoundMgr.Instance.PlayDialogue(1);
-        }
+        
     }
 
     public void PlaySound(int clipIndex)
@@ -53,14 +50,28 @@ public class SoundMgr : MonoBehaviour
        
     }
 
-    public void PlayDialogue(int times)
+    public float PlayDialogue(int times)
     {
         if (dialogueIndex == dialoguesList.Count)
         {
             Debug.LogWarning("dialogue index exceeds range!");
-            return;
+            return 0f;
         }
         StartCoroutine(PlayDialogIE(times));
+        float waittime = 0;
+        int temp = dialogueIndex;
+        for (int i = 0; i < times; i++)
+        {
+            if(temp== dialoguesList.Count)
+            {
+                return waittime;
+            }
+            waittime += dialoguesList[temp].length;
+            temp++;
+        
+
+        }
+        return waittime;
     }
 
     public void PlayBGM(int clipIndex)

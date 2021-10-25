@@ -67,11 +67,16 @@ public class Bowl : MonoBehaviour
             InnerPot1.SetActive(false);
             InnerPot2.SetActive(true);
             waterCount++;
-            readyforCook = true;
+            StartCoroutine(Dialog3());
         }
     }
 
-    
 
-    
+    IEnumerator Dialog3()
+    {
+        float waittime = SoundMgr.Instance.PlayDialogue(2);
+        yield return new WaitForSeconds(waittime);
+        readyforCook = true;
+    }
+
 }

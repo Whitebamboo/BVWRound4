@@ -25,7 +25,7 @@ public class CaCookerp : MonoBehaviour
             SoundMgr.Instance.PlaySound(1);
             cacookerp.SetActive(true);
             Destroy(gameObject);
-            GameManager.Instance.ChangeScene("VideoChatScene");
+            //GameManager.Instance.ChangeScene("VideoChatScene");
         }
     }
 }
