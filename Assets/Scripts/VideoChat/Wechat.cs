@@ -8,7 +8,7 @@ public class Wechat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //SoundMgr.Instance.PlayDialogue(2);
     }
 
     // Update is called once per frame
@@ -19,8 +19,15 @@ public class Wechat : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        StartCoroutine(PlayDialog1());
         this.gameObject.SetActive(false);
         WechatObject.SetActive(true);
         WechatObject.GetComponentInChildren<Danny>().clickTime = Time.time;
+    }
+
+    IEnumerator PlayDialog1()
+    {
+        float waittime = SoundMgr.Instance.PlayDialogue(2);
+        yield return new WaitForSeconds(waittime);
     }
 }

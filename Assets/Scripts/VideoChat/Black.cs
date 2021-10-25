@@ -5,6 +5,7 @@ using UnityEngine;
 public class Black : MonoBehaviour
 {
     public GameObject HomeImageCanvas;
+    public GameObject HomeImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,21 @@ public class Black : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        this.gameObject.SetActive(false);
         HomeImageCanvas.SetActive(true);
+        StartCoroutine(PlayDialog0());
+        this.gameObject.SetActive(false);
+        
+
+
+
+    }
+
+    IEnumerator PlayDialog0()
+    {
+
+        Debug.Log("----------");
+        float waittime = SoundMgr.Instance.PlayDialogue(3);
+        yield return new WaitForSeconds(waittime);
+        HomeImage.GetComponent<BoxCollider>().enabled = true;
     }
 }

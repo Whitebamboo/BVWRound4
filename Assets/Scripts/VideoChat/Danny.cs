@@ -16,14 +16,22 @@ public class Danny : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - clickTime > 1f)
+        if (Time.time - clickTime > 5f)
         {
+            Debug.Log("===Being able to click danny====");
             this.gameObject.GetComponent<BoxCollider>().enabled = true;
         }
     }
     private void OnTriggerEnter(Collider other)
     {
+        StartCoroutine(PlayDialog4());
         this.gameObject.SetActive(false);
         WechatDannyObj.SetActive(true);
+    }
+
+    IEnumerator PlayDialog4()
+    {
+        float waittime = SoundMgr.Instance.PlayDialogue(2);
+        yield return new WaitForSeconds(waittime);
     }
 }

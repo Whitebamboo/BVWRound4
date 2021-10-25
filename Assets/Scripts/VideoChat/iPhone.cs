@@ -19,6 +19,8 @@ public class iPhone : MonoBehaviour
         isBeingCalled = false;
         haveCalled = false;
 
+        SoundMgr.Instance.PlayDialogue(1);
+
     }
 
     // Update is called once per frame

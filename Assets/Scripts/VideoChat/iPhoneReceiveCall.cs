@@ -5,6 +5,8 @@ using UnityEngine;
 public class iPhoneReceiveCall : MonoBehaviour
 {
     public GameObject VideoChatObj;
+    //public GameObject SoundMgrObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,29 @@ public class iPhoneReceiveCall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        this.gameObject.SetActive(false);
-        VideoChatObj.SetActive(true);
+
+        StartCoroutine(PlayDialog2());
 
         this.gameObject.GetComponentInParent<iPhone>().isPressed = true;
+        this.gameObject.SetActive(false);
+        VideoChatObj.SetActive(true);
+        
 
-        SoundMgr.Instance.PlaySound(0);
+        
+        
+
+
+       
+        //SoundMgrObj.GetComponent<AudioSource>().Stop();
+        
     }
+
+    IEnumerator PlayDialog2()
+    {
+        Debug.Log("=====It works!====");
+        float waittime = SoundMgr.Instance.PlayDialogue(2);
+        yield return new WaitForSeconds(waittime);
+        GameManager.Instance.ChangeScene("EnddingScene");
+    }
+
 }
