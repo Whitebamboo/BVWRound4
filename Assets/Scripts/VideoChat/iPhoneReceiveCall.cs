@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class iPhoneReceiveCall : MonoBehaviour
 {
@@ -22,20 +23,20 @@ public class iPhoneReceiveCall : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+
+        Debug.Log("!OntriggerEnter");
+        this.gameObject.GetComponentInParent<iPhone>().isPressed = true;
+
+        //this.gameObject.SetActive(false);
+        this.gameObject.GetComponent<Image>().enabled = false;
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+
         StartCoroutine(PlayDialog2());
 
-        this.gameObject.GetComponentInParent<iPhone>().isPressed = true;
-        this.gameObject.SetActive(false);
-        VideoChatObj.SetActive(true);
-        
+        //VideoChatObj.SetActive(true);
 
-        
-        
-
-
-       
         //SoundMgrObj.GetComponent<AudioSource>().Stop();
-        
+
     }
 
     IEnumerator PlayDialog2()

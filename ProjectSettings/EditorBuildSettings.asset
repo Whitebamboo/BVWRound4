@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VideoChatScene.unity
     guid: 7e7cee39dc0821d449116f1fd6b6fcfb
+  - enabled: 1
+    path: Assets/Scenes/EnddingScene.unity
+    guid: ab93c011fd8fd974290161ccecab5841
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 21260048bbc1d3f41840bfd81c8d7842, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c302db31389f23b4bb9520117cdf3371, type: 2}

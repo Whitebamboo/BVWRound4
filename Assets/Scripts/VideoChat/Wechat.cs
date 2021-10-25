@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wechat : MonoBehaviour
 {
     public GameObject WechatObject;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +21,21 @@ public class Wechat : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(PlayDialog1());
-        this.gameObject.SetActive(false);
-        WechatObject.SetActive(true);
-        WechatObject.GetComponentInChildren<Danny>().clickTime = Time.time;
+
+
+        //this.gameObject.SetActive(false);
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        this.gameObject.GetComponent<Image>().enabled = false;
+
+        WechatObject.SetActive(true);    
+        StartCoroutine(PlayDialog());
     }
 
-    IEnumerator PlayDialog1()
+    IEnumerator PlayDialog()
     {
         float waittime = SoundMgr.Instance.PlayDialogue(2);
         yield return new WaitForSeconds(waittime);
+        WechatObject.GetComponentInChildren<BoxCollider>().enabled = true;
+
     }
 }
