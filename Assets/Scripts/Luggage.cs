@@ -27,6 +27,7 @@ public class Luggage : MonoBehaviour
             isOpen = true;
             animator.SetTrigger("Trigger");
             SteamCooker.GetComponent<BoxCollider>().enabled = true;
+            SoundMgr.Instance.PlaySound(16);
         }
     }
 }

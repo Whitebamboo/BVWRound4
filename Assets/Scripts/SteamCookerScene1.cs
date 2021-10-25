@@ -23,7 +23,8 @@ public class SteamCookerScene1 : MonoBehaviour
         if (!isSelect)
         {
             isSelect = true;
-            StartCoroutine(FadeIn(image, 0.01f, 5f));
+            StartCoroutine(FadeIn(image, 0.01f, 3f));
+            SoundMgr.Instance.PlaySound(15);
         }
     }
 
