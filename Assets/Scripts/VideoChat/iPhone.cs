@@ -8,6 +8,8 @@ public class iPhone : MonoBehaviour
     public bool isBeingCalled;
     public bool haveCalled;
     public float startTime;
+
+    public GameObject BeingCalledObj;
     //public GameObject 
 
     // Start is called before the first frame update
@@ -27,10 +29,10 @@ public class iPhone : MonoBehaviour
             isBeingCalled = false;
             haveCalled = true;
         }
-        if ((Time.time - startTime > 2f) && (haveCalled))
-            {
-                BlackObject.SetActive(false);
-            }
+        if ((Time.time - startTime > 2.5f) && (haveCalled)){
+            BlackObject.SetActive(false);
+            BeingCalledObj.SetActive(true);
+        }
     }
 
 }
