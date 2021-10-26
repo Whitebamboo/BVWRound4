@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndSceneiPhone : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class EndSceneiPhone : MonoBehaviour
 
     public void PhoneViberates()
     {
+        this.gameObject.GetComponentInChildren<Image>().enabled = true;
         SoundMgr.Instance.PlaySound(8);
         SoundMgr.Instance.PlaySound(10);
     }
