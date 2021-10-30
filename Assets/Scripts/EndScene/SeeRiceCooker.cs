@@ -24,7 +24,7 @@ public class SeeRiceCooker : MonoBehaviour
         
         //pos = new Vector3(xx, yy, zz);
         Ray ray = iphonecamera.ScreenPointToRay(pos);
-        Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
         RaycastHit hitinfo;
         if (Physics.Raycast(ray, out hitinfo))
         {

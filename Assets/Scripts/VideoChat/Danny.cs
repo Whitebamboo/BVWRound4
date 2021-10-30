@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Danny : MonoBehaviour
 {
     public GameObject WechatDannyObj;
+    public Animator GrandmaPointing;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,10 @@ public class Danny : MonoBehaviour
         WechatDannyObj.SetActive(true);
         StartCoroutine(PlayDialog());
         
+        // <Tempelate usage of Grandma Pointing iPad animation>
+        GrandmaPointing.SetTrigger("ShouldPoint");
 
-       
+
     }
 
     IEnumerator PlayDialog()
