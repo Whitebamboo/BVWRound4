@@ -9,7 +9,7 @@ public class SeeRiceCooker : MonoBehaviour
     public int yy;
     public int zz;
     Vector3 pos;
-
+    public bool isFirstTime;
     void Start()
     {
         //cam = GetComponent<Camera>();
@@ -17,6 +17,7 @@ public class SeeRiceCooker : MonoBehaviour
         yy = 120;
         zz = 0;
         pos = new Vector3(xx, yy, zz);
+        isFirstTime = true;
     }
 
     void Update()
@@ -28,11 +29,12 @@ public class SeeRiceCooker : MonoBehaviour
         RaycastHit hitinfo;
         if (Physics.Raycast(ray, out hitinfo))
         {
-            if (hitinfo.transform.name == "SteamCooker")
+            if (hitinfo.transform.name == "SteamCooker" && isFirstTime)
             {
                 Debug.Log("SteamCooker captured");
                 // !!!!!!! TODO: Replaced with dialogue later.
                 SoundMgr.Instance.PlaySound(0);
+                isFirstTime = false;
             }
             //Debug.Log(hitinfo.transform.name + "::" + hitinfo.collider.isTrigger);
         }
