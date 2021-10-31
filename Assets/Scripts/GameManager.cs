@@ -24,10 +24,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "CookingScene")
-        {
-            SoundMgr.Instance.PlayBGM(1);
-        }
+        
 
 
 
@@ -49,7 +46,8 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitForChangeScene(string scenename)
     {
         URPScreenFade.Instance.SceneFadeOut();
-        yield return new WaitForSeconds(2f);
+        SoundMgr.Instance.VolumeFadeOut();
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(scenename);
     }
     

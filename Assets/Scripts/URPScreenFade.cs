@@ -50,12 +50,12 @@ public class URPScreenFade : MonoBehaviour
     }
 
     //[Button]
-    public void SceneFadeOut(float timeSecs = 2f)
+    public void SceneFadeOut(float timeSecs = 4f)
     {
         DoFade(FadingDirection.FadeOut, timeSecs);
     }
     //[Button]
-    public void SceneFadeIn(float timeSecs = 2f)
+    public void SceneFadeIn(float timeSecs = 4f)
     {
         DoFade(FadingDirection.FadeIn, timeSecs);
     }

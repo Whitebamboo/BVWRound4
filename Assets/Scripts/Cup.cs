@@ -50,6 +50,7 @@ public class Cup : MonoBehaviour
     }
     IEnumerator Dialog1()
     {
+        yield return new WaitForSeconds(5f);
         float waittime=SoundMgr.Instance.PlayDialogue(2);
         yield return new WaitForSeconds(waittime);
         GetComponent<BoxCollider>().enabled = true;

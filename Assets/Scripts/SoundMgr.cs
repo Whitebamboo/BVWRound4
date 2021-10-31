@@ -15,7 +15,7 @@ public class SoundMgr : MonoBehaviour
 
     [Header("FadeIn Configs")]
     [SerializeField] private float smoothness = 0.5f;
-    [SerializeField] private float increase = 0.05f;
+    [SerializeField] private float increase = 0.2f;
     [SerializeField] private float maxVolume = 1.0f;
 
     private bool startBgm = true;
@@ -38,8 +38,9 @@ public class SoundMgr : MonoBehaviour
     void Start()
     {
         
-        //audioSource.volume = 0;
-        if(SceneManager.GetActiveScene().name=="BeginScene"||SceneManager.GetActiveScene().name== "BeginScene 2")
+        audioSource.volume = 0;
+        VolumeFadeIn();
+        if (SceneManager.GetActiveScene().name=="BeginScene"||SceneManager.GetActiveScene().name== "BeginScene 2")
         {
             PlayBGM(0);
         }
@@ -48,7 +49,7 @@ public class SoundMgr : MonoBehaviour
             PlayBGM(1);
         }
         
-        //VolumeFadeIn();
+        
         
     }
 
@@ -107,6 +108,20 @@ public class SoundMgr : MonoBehaviour
         }
     }
 
+    public void VolumeFadeOut()
+    {
+        StartCoroutine(StartVolumeFadeOut(smoothness, increase, 0));
+    }
+
+    IEnumerator StartVolumeFadeOut(float smoothness, float inc, float maxVol)
+    {
+        while (audioSource.volume > maxVol)
+        {
+            audioSource.volume -= inc;
+            yield return new WaitForSeconds(smoothness);
+        }
+    }
+
     IEnumerator PlayDialogIE(int times)
     {
         for(int i = 0; i < times; i++)
@@ -118,4 +133,6 @@ public class SoundMgr : MonoBehaviour
         }
         
     }
+
+    
 }
