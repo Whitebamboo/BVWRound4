@@ -3,7 +3,32 @@ guid: a851189402dfd314c8714d9559a71b0a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceiling1
+    second: {fileID: 2100000, guid: 6cd954bc28a49e84eb3543bdda601c0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor1
+    second: {fileID: 2100000, guid: 659757983c316e44a9438b775c0d8b43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WainscotBottom
+    second: {fileID: 2100000, guid: 2109918b3926e9948ab5c05b39f15b4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WainscotTop
+    second: {fileID: 2100000, guid: 9ad10b733f5e9ee40b9a95728da87282, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallPaint
+    second: {fileID: 2100000, guid: fbe04b10e73e9974f9cd9a55c9c997a7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
