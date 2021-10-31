@@ -33,7 +33,7 @@ public class SeeRiceCooker : MonoBehaviour
             {
                 Debug.Log("SteamCooker captured");
                 // !!!!!!! TODO: Replaced with dialogue later.
-                SoundMgr.Instance.PlaySound(0);
+                SoundMgr.Instance.PlayDialogue(3);
                 isFirstTime = false;
             }
             //Debug.Log(hitinfo.transform.name + "::" + hitinfo.collider.isTrigger);

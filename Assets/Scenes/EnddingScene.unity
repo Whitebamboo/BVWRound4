@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1888,12 +1888,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6ba3aac67b97da34badf8b31333f3073, type: 3}
   - {fileID: 8300000, guid: 2199f6ba73e81384196dc261032df992, type: 3}
   dialoguesList:
-  - {fileID: 8300000, guid: 99d601570dcc69d4da53f76dace68c9e, type: 3}
-  - {fileID: 8300000, guid: b4f7fce9bf4c8f549bc309ddf01b66f2, type: 3}
-  - {fileID: 8300000, guid: 4a11b95fa62b7814da605f05bd35d294, type: 3}
-  - {fileID: 8300000, guid: 4a11b95fa62b7814da605f05bd35d294, type: 3}
-  - {fileID: 8300000, guid: 4a11b95fa62b7814da605f05bd35d294, type: 3}
-  - {fileID: 8300000, guid: 4a11b95fa62b7814da605f05bd35d294, type: 3}
+  - {fileID: 8300000, guid: d41ec8a329bc594468dc5d86a7f44b9b, type: 3}
+  - {fileID: 8300000, guid: 61b1451fd96dc2e4995b90ace58a7390, type: 3}
+  - {fileID: 8300000, guid: 4d7877aa0f1d22148b9e6de82404314c, type: 3}
+  - {fileID: 8300000, guid: 3213be147c47f4b44a24fdd151d5628b, type: 3}
+  - {fileID: 8300000, guid: 3bd2418ef3f7ade44ab0acae1c6c6d08, type: 3}
+  - {fileID: 8300000, guid: 7f04bc50fd59850448fbc07156dbe52b, type: 3}
+  - {fileID: 8300000, guid: 82083f1d6d0bb4b4ab6dc35e11bd7ca3, type: 3}
+  - {fileID: 8300000, guid: 69ba82e52e6324148b57c062d106326b, type: 3}
+  - {fileID: 8300000, guid: a4507c70254e96148a97ab16733f52dc, type: 3}
   dialogueIndex: 0
   smoothness: 0.5
   increase: 0.05
@@ -5133,7 +5136,7 @@ BoxCollider:
   m_GameObject: {fileID: 1553572653}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.04734458, y: 0.09237403, z: 0.10539551}
   m_Center: {x: -0.0057537486, y: -0.0015763026, z: 0.0023692138}
@@ -5247,6 +5250,8 @@ MonoBehaviour:
   startTime: 0
   isFirstTime: 0
   LiveVideoObj: {fileID: 1456830387}
+  RiceCookerObj: {fileID: 1553572653}
+  isFirstTimeGrabiPhone: 0
 --- !u!4 &1589316186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8c0f195fb51ee6345971c6183786226e, type: 3}
@@ -5300,7 +5305,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1589316185}
+        m_TargetAssemblyTypeName: EndSceneiPhone, Assembly-CSharp
+        m_MethodName: ShowAround
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -6996,6 +7013,7 @@ MonoBehaviour:
   xx: 0
   yy: 0
   zz: 0
+  isFirstTime: 0
 --- !u!4 &1905079831
 Transform:
   m_ObjectHideFlags: 0
