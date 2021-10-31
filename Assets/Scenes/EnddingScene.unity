@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2212,6 +2212,8 @@ GameObject:
   - component: {fileID: 829836881}
   - component: {fileID: 829836883}
   - component: {fileID: 829836882}
+  - component: {fileID: 829836884}
+  - component: {fileID: 829836885}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -2276,6 +2278,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829836880}
   m_CullTransparentMesh: 1
+--- !u!65 &829836884
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829836880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5424834, y: 1.9764093, z: 0.049291547}
+  m_Center: {x: 0.7385608, y: -3.219391, z: 0.16962144}
+--- !u!114 &829836885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829836880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6822008a9571bea4fbe2cfd51d46bed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HaveClicked: 0
+  iPhoneObj: {fileID: 1589316183}
+  LiveVideoObj: {fileID: 1456830387}
 --- !u!1 &893914112
 GameObject:
   m_ObjectHideFlags: 0
@@ -5251,6 +5281,7 @@ MonoBehaviour:
   isFirstTime: 0
   LiveVideoObj: {fileID: 1456830387}
   RiceCookerObj: {fileID: 1553572653}
+  ReceiveCallObj: {fileID: 829836880}
   isFirstTimeGrabiPhone: 0
 --- !u!4 &1589316186 stripped
 Transform:
@@ -5405,7 +5436,7 @@ GameObject:
   - component: {fileID: 1610175150}
   m_Layer: 3
   m_Name: RightHand Controller
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6573,7 +6604,7 @@ GameObject:
   - component: {fileID: 1839696671}
   m_Layer: 3
   m_Name: LeftHand Controller
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
