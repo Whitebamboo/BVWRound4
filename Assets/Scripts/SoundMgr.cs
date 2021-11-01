@@ -48,6 +48,10 @@ public class SoundMgr : MonoBehaviour
         {
             PlayBGM(1);
         }
+        else if(SceneManager.GetActiveScene().name == "Credit")
+        {
+            PlayBGM(3);
+        }
         
         
         

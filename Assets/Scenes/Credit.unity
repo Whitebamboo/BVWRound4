@@ -937,6 +937,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 21fc6e76a9814244abbaaaf971a6d709, type: 3}
   - {fileID: 8300000, guid: 6ba3aac67b97da34badf8b31333f3073, type: 3}
   - {fileID: 8300000, guid: 2199f6ba73e81384196dc261032df992, type: 3}
+  - {fileID: 8300000, guid: def0c99e5589ab540abd9892c147f3cb, type: 3}
   dialoguesList:
   - {fileID: 8300000, guid: 2e19fb9a4ae16804189f33ddfac3682f, type: 3}
   - {fileID: 8300000, guid: a39028490df8f8c4eb878183361f13d6, type: 3}
