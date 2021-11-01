@@ -10,6 +10,7 @@ public class Cup : MonoBehaviour
     public GameObject Rice;
     public bool hasWater;
     public GameObject innerWater;
+    public GameObject GrandMa;
     void Start()
     {
         hasRice = false;
@@ -52,6 +53,7 @@ public class Cup : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         float waittime=SoundMgr.Instance.PlayDialogue(2);
+        GrandMa.GetComponent<Animator>().SetBool("Wave", true);
         yield return new WaitForSeconds(waittime);
         GetComponent<BoxCollider>().enabled = true;
     }
