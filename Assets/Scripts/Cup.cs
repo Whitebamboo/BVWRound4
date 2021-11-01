@@ -60,6 +60,7 @@ public class Cup : MonoBehaviour
 
     IEnumerator Dialog2()
     {
+        GrandMa.GetComponent<Animator>().SetBool("Secret", true);
         float waittime = SoundMgr.Instance.PlayDialogue(1);
         yield return new WaitForSeconds(waittime);
         ReadyForWater = true;
