@@ -40,7 +40,7 @@ public class SoundMgr : MonoBehaviour
         
         audioSource.volume = 0;
         VolumeFadeIn();
-        if (SceneManager.GetActiveScene().name=="BeginScene"||SceneManager.GetActiveScene().name== "BeginScene 2")
+        if (SceneManager.GetActiveScene().name=="BeginScene"||SceneManager.GetActiveScene().name== "BeginScene 2" || SceneManager.GetActiveScene().name == "EnddingScene")
         {
             PlayBGM(0);
         }
