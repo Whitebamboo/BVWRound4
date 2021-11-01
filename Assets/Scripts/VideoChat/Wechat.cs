@@ -24,10 +24,12 @@ public class Wechat : MonoBehaviour
 
 
         //this.gameObject.SetActive(false);
+        SoundMgr.Instance.PlaySound(9);
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         this.gameObject.GetComponent<Image>().enabled = false;
 
-        WechatObject.SetActive(true);    
+        WechatObject.SetActive(true);
+        //WechatObject.GetComponentInChildren<BoxCollider>().enabled = true;
         StartCoroutine(PlayDialog());
     }
 

@@ -43,6 +43,7 @@ public class EndSceneReceiveCall : MonoBehaviour
 
     IEnumerator PlayDialog()
     {
+        yield return new WaitForSeconds(0.8f);
         float waittime = SoundMgr.Instance.PlayDialogue(4);
         yield return new WaitForSeconds(waittime);
         iPhoneObj.GetComponentInChildren<Image>().enabled = false;

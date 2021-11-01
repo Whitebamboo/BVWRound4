@@ -20,6 +20,7 @@ public class VoiceCall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        SoundMgr.Instance.PlaySound(9);
         this.gameObject.GetComponent<Image>().enabled = false;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
 

@@ -20,20 +20,18 @@ public class iPhoneReceiveCall : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    public void GrandmaPressReceived()
     {
+        SoundMgr.Instance.PlaySound(9);
+        this.gameObject.GetComponentInParent<iPhone>().isPressed = true;
 
-        if (other.tag == "Hand")
-        {
-            Debug.Log("!OntriggerEnter");
-            this.gameObject.GetComponentInParent<iPhone>().isPressed = true;
+        //this.gameObject.SetActive(false);
+        this.gameObject.GetComponent<Image>().enabled = false;
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
 
-            //this.gameObject.SetActive(false);
-            this.gameObject.GetComponent<Image>().enabled = false;
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
-
-            StartCoroutine(PlayDialog2());
-        }
+        StartCoroutine(PlayDialog2());
+        
         //VideoChatObj.SetActive(true);
 
         //SoundMgrObj.GetComponent<AudioSource>().Stop();
