@@ -18,9 +18,9 @@ public class Danny : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
         SoundMgr.Instance.PlaySound(9);
         this.gameObject.GetComponent<Image>().enabled = false;
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
 
         WechatDannyObj.SetActive(true);
         StartCoroutine(PlayDialog());
