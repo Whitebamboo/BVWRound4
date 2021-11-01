@@ -4202,8 +4202,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02313818, y: 0.023118144, z: 0.023761481}
-  m_Center: {x: -0.00014568493, y: 0.010171978, z: -0.0006983479}
+  m_Size: {x: 0.01994177, y: 0.028325772, z: 0.023761481}
+  m_Center: {x: 0.0014525283, y: 0.012775792, z: -0.0006983479}
 --- !u!114 &161707392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9242,14 +9242,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393781835}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.025017872, y: 0.031416073, z: -0.0008209944}
+  m_LocalRotation: {x: 0, y: -0.35110638, z: 0, w: 0.93633556}
+  m_LocalPosition: {x: 0.141, y: 0.031416073, z: -0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1338685002}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -41.11, z: 0}
 --- !u!114 &393781838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11653,6 +11653,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8273675064bf01a4abc3e0832376f1f2, type: 2}
+    - target: {fileID: 266033297585789988, guid: 3128705c11fe02343bcd870361e4c9e7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd71291c91c8cce499cb663b5db9970e, type: 2}
     - target: {fileID: 919132149155446097, guid: 3128705c11fe02343bcd870361e4c9e7, type: 3}
       propertyPath: m_Name
       value: CookerInnerPot (1)
@@ -26615,6 +26619,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 266033297585789988, guid: 3128705c11fe02343bcd870361e4c9e7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd71291c91c8cce499cb663b5db9970e, type: 2}
     - target: {fileID: 919132149155446097, guid: 3128705c11fe02343bcd870361e4c9e7, type: 3}
       propertyPath: m_Name
       value: CookerInnerPot
@@ -39841,7 +39849,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8273675064bf01a4abc3e0832376f1f2, type: 2}
+  - {fileID: 2100000, guid: 68d20fdf18ed3b24f9fd29fea519dbb6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
