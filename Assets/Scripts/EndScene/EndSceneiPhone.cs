@@ -13,7 +13,13 @@ public class EndSceneiPhone : MonoBehaviour
     public GameObject RiceCookerObj;
     public GameObject ReceiveCallObj;
     public bool isFirstTimeGrabiPhone;
-    
+
+    public bool finishedPlaying;
+
+    public bool GripHolding;
+
+    public AudioSource WechatRing;
+    public AudioSource ViberateSound;
 
 
     // Start is called before the first frame update
@@ -22,7 +28,8 @@ public class EndSceneiPhone : MonoBehaviour
         startTime = Time.time;
         isFirstTime = true;
         isFirstTimeGrabiPhone = true;
-        
+        finishedPlaying = false;
+        GripHolding = false;
     }
 
     // Update is called once per frame
@@ -35,11 +42,22 @@ public class EndSceneiPhone : MonoBehaviour
         }
     }
 
+    public void GripHoldOn()
+    {
+        GripHolding = true;
+    }
+    
+    public void GripHoldOff()
+    {
+        GripHolding = false;
+    }
+
+
     public void ShowAround()
     {
-        if (isFirstTimeGrabiPhone)
+        if (isFirstTimeGrabiPhone && finishedPlaying)
         {
-            
+            Debug.Log("====Show around====");
             isFirstTimeGrabiPhone = false;
             StartCoroutine(PlayDialog2());
         }
@@ -49,8 +67,10 @@ public class EndSceneiPhone : MonoBehaviour
     {
         this.gameObject.GetComponentInChildren<Image>().enabled = true;
         ReceiveCallObj.GetComponent<BoxCollider>().enabled = true;
-        SoundMgr.Instance.PlaySound(8);
-        SoundMgr.Instance.PlaySound(10);
+        //SoundMgr.Instance.PlaySound(8);
+        //SoundMgr.Instance.PlaySound(10);
+        WechatRing.Play();
+        ViberateSound.Play();
     }
 
 

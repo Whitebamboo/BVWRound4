@@ -33,10 +33,19 @@ public class SeeRiceCooker : MonoBehaviour
             {
                 Debug.Log("SteamCooker captured");
                 // !!!!!!! TODO: Replaced with dialogue later.
-                SoundMgr.Instance.PlayDialogue(3);
+                // SoundMgr.Instance.PlayDialogue(3);
                 isFirstTime = false;
+                StartCoroutine(PlayDialogue3());
             }
             //Debug.Log(hitinfo.transform.name + "::" + hitinfo.collider.isTrigger);
         }
+    }
+
+
+    IEnumerator PlayDialogue3()
+    {
+        float waittime = SoundMgr.Instance.PlayDialogue(4);
+        yield return new WaitForSeconds(waittime);
+        GameManager.Instance.ChangeScene("Credit");
     }
 }
