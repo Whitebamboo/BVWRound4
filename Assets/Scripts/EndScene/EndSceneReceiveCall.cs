@@ -10,6 +10,10 @@ public class EndSceneReceiveCall : MonoBehaviour
     public bool HaveClicked;
     public GameObject iPhoneObj;
     public GameObject LiveVideoObj;
+
+    //AWAITING NEW ART ASSET
+    public Sprite GrandmaNewSprite;
+    public GameObject SmallGrandmaObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +31,10 @@ public class EndSceneReceiveCall : MonoBehaviour
         // ========== This is used for clicking call button on iPhone.=========
         if (other.gameObject.tag == "Hand" && !HaveClicked)
         {
-            Debug.Log("============Received clic=========");
+            //Debug.Log("============Received clic=========");
             HaveClicked = true;
-            Debug.Log("Triggered");
-            iPhoneObj.GetComponentInChildren<Image>().enabled = false;
+            //Debug.Log("Triggered");
+            iPhoneObj.GetComponentInChildren<Image>().sprite = GrandmaNewSprite;
             StartCoroutine(PlayDialog());
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
@@ -41,7 +45,10 @@ public class EndSceneReceiveCall : MonoBehaviour
     {
         float waittime = SoundMgr.Instance.PlayDialogue(4);
         yield return new WaitForSeconds(waittime);
+        iPhoneObj.GetComponentInChildren<Image>().enabled = false;
         LiveVideoObj.SetActive(true);
         iPhoneObj.GetComponent<XRGrabInteractable>().enabled = true;
+        SmallGrandmaObj.GetComponent<Image>().enabled = true;
+        
     }
 }
