@@ -8,6 +8,7 @@ public class Toggle : MonoBehaviour
     Animator animator;
     public GameObject Cacookerp;
     private bool isStart = false;
+    public GameObject grandMa;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -32,6 +33,7 @@ public class Toggle : MonoBehaviour
 
     IEnumerator Dialog4()
     {
+        grandMa.GetComponent<Animator>().SetBool("look", true);
         float waittime = SoundMgr.Instance.PlayDialogue(2);
         yield return new WaitForSeconds(waittime);
         GameManager.Instance.ChangeScene("BeginScene 2");
