@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Team_69
-  productName: Grandma
+  productName: She
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -131,6 +131,8 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 11400000, guid: 21260048bbc1d3f41840bfd81c8d7842, type: 2}
+  - {fileID: 0}
+  - {fileID: 8637459921678429486, guid: c302db31389f23b4bb9520117cdf3371, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -148,7 +150,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Team_69.Grandma
+    Android: com.Team_69.She
     Standalone: com.Team69.Grandma
   buildNumber:
     Standalone: 0

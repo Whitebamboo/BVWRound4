@@ -10,6 +10,7 @@ public class PhotoManager : MonoBehaviour
     public GameObject photo2;
     public GameObject photo3;
     public GameObject photo4;
+    public GameObject photo5;
     public GameObject credit;
     public GameObject title;
     void Start()
@@ -66,8 +67,13 @@ public class PhotoManager : MonoBehaviour
 
         photo4.SetActive(true);
         StartCoroutine(FadeIn(photo4, 0.01f, 5f));
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         photo4.SetActive(false);
+
+        photo5.SetActive(true);
+        StartCoroutine(FadeIn(photo5, 0.01f, 5f));
+        yield return new WaitForSeconds(10f);
+        photo5.SetActive(false);
 
         credit.SetActive(true);
         StartCoroutine(FadeIn(credit, 0.01f, 5f));

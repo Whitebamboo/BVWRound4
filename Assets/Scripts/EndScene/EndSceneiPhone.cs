@@ -35,7 +35,7 @@ public class EndSceneiPhone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Time.time - startTime > 5f) && isFirstTime)
+        if ((Time.time - startTime > 8f) && isFirstTime)
         {
             PhoneViberates();
             isFirstTime = false;

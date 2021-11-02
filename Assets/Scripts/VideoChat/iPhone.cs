@@ -52,6 +52,7 @@ public class iPhone : MonoBehaviour
 
     IEnumerator PlayDialog1()
     {
+        yield return new WaitForSeconds(5f);
         float waittime = SoundMgr.Instance.PlayDialogue(4);
         yield return new WaitForSeconds(waittime);
         WechatObject.GetComponent<BoxCollider>().enabled = true;
