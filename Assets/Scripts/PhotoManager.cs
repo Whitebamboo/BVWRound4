@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PhotoManager : MonoBehaviour
 {
@@ -82,5 +83,7 @@ public class PhotoManager : MonoBehaviour
 
         title.SetActive(true);
         StartCoroutine(FadeIn(title, 0.01f, 5f));
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadScene("BeginScene");
     }
 }

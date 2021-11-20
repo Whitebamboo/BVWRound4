@@ -2640,6 +2640,7 @@ MonoBehaviour:
   smoothness: 0.5
   increase: 0.05
   maxVolume: 1
+  bufferTime: 1
 --- !u!82 &510444661
 AudioSource:
   m_ObjectHideFlags: 0

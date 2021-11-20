@@ -21,6 +21,14 @@ public class SoundMgr : MonoBehaviour
     private bool startBgm = true;
     private AudioSource audioSource;
 
+    public class AudioBuffer
+    {
+        public string name;
+        public float time;
+    }
+    public float bufferTime;
+    public List<AudioBuffer> audioBuffers = new List<AudioBuffer>();
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -57,9 +65,21 @@ public class SoundMgr : MonoBehaviour
         
     }
 
+    void Update()
+    {
+        if (audioBuffers.Capacity > 0)
+        {
+            foreach (AudioBuffer b in audioBuffers)
+            {
+                b.time -= Time.deltaTime;
+            }
+        }
+    }
+
     public void PlaySound(int clipIndex)
     {
-        audioSource.PlayOneShot(soundList[clipIndex]);
+        PlayClip(soundList[clipIndex]);
+        //audioSource.PlayOneShot(soundList[clipIndex]);
        
     }
 
@@ -138,5 +158,42 @@ public class SoundMgr : MonoBehaviour
         
     }
 
-    
+    public void PlayClip(AudioClip clip, float delay = 0)
+    {
+        if (clip == null)
+        {
+            Debug.Log("Null Clip");
+            return;
+        }
+
+        if (audioBuffers.Capacity > 0)
+        {
+            foreach (AudioBuffer b in audioBuffers)
+            {
+                if (clip.name == b.name && b.time > 0)
+                {
+                    return;
+                }
+                else if (clip.name == b.name)
+                {
+                    b.time = bufferTime;
+                }
+            }
+        }
+
+        if (delay > 0)
+        {
+            audioSource.clip = clip;
+            audioSource.PlayDelayed(delay);
+        }
+        else
+        {
+            audioSource.PlayOneShot(clip);
+        }
+
+        AudioBuffer buffer = new AudioBuffer();
+        buffer.name = clip.name;
+        buffer.time = bufferTime;
+        audioBuffers.Add(buffer);
+    }
 }
