@@ -14,6 +14,8 @@ public class PhotoManager : MonoBehaviour
     public GameObject photo5;
     public GameObject credit;
     public GameObject title;
+
+    public GameObject replaybutton;
     void Start()
     {
         StartCoroutine(ShowPics());
@@ -83,7 +85,9 @@ public class PhotoManager : MonoBehaviour
 
         title.SetActive(true);
         StartCoroutine(FadeIn(title, 0.01f, 5f));
-        yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene("BeginScene");
+        replaybutton.SetActive(true);
+        StartCoroutine(FadeIn(replaybutton, 0.01f, 5f));
+        //yield return new WaitForSeconds(10f);
+        //SceneManager.LoadScene("BeginScene");
     }
 }

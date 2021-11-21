@@ -76,6 +76,7 @@ public class EndSceneiPhone : MonoBehaviour
 
     IEnumerator PlayDialog2()
     {
+        // FROM "SHOW YOU AROUND" TO "COOK SOME RICE WITH YOUR RICE COOKER"
         yield return new WaitForSeconds(3f);
         float waittime = SoundMgr.Instance.PlayDialogue(2);
         yield return new WaitForSeconds(waittime);
