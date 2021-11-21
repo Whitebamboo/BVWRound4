@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a6401f578b3ab438cb38e3342b46b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WechatObject: {fileID: 1971973662}
+  WechatObject: {fileID: 1319444098}
 --- !u!65 &75819559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5737,7 +5737,7 @@ GameObject:
   - component: {fileID: 1003609445}
   - component: {fileID: 1003609444}
   m_Layer: 5
-  m_Name: WechatUI
+  m_Name: WechatUI3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7353,7 +7353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ece38e5cf524141b99ddb093dfc662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WechatDannyObj: {fileID: 1945715445}
+  WechatDannyObj: {fileID: 2001345254}
 --- !u!1 &1330971066
 GameObject:
   m_ObjectHideFlags: 0
@@ -11802,7 +11802,7 @@ GameObject:
   - component: {fileID: 2001345256}
   - component: {fileID: 2001345259}
   m_Layer: 5
-  m_Name: WechatUI
+  m_Name: WechatUI2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -18,8 +18,8 @@ public class Danny : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
         SoundMgr.Instance.PlaySound(9);
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
         this.gameObject.GetComponent<Image>().enabled = false;
 
         WechatDannyObj.SetActive(true);
@@ -32,6 +32,6 @@ public class Danny : MonoBehaviour
     {
         float waittime = SoundMgr.Instance.PlayDialogue(2);
         yield return new WaitForSeconds(waittime);
-        WechatDannyObj.GetComponentInChildren<BoxCollider>().enabled = true;
+        WechatDannyObj.GetComponent<BoxCollider>().enabled = true;
     }
 }

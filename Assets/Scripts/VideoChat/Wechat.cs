@@ -37,7 +37,7 @@ public class Wechat : MonoBehaviour
     {
         float waittime = SoundMgr.Instance.PlayDialogue(2);
         yield return new WaitForSeconds(waittime);
-        WechatObject.GetComponentInChildren<BoxCollider>().enabled = true;
+        WechatObject.GetComponent<BoxCollider>().enabled = true;
 
     }
 }
