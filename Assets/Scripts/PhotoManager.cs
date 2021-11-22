@@ -86,7 +86,7 @@ public class PhotoManager : MonoBehaviour
         title.SetActive(true);
         StartCoroutine(FadeIn(title, 0.01f, 5f));
         replaybutton.SetActive(true);
-        StartCoroutine(FadeIn(replaybutton, 0.01f, 5f));
+        //StartCoroutine(FadeIn(replaybutton, 0.01f, 5f));
         //yield return new WaitForSeconds(10f);
         //SceneManager.LoadScene("BeginScene");
     }
